@@ -137,7 +137,7 @@
     @if $enable-responsive-typography {
       @each $key, $values in $breakpoints {
         @if $values {
-          @media (min-width: map.get($values, "breakpoint")) {
+          @media (min-height: map.get($values, "breakpoint")) {
             #{$css-var-prefix}font-size: map.get($values, "root-font-size");
           }
         }
@@ -155,7 +155,7 @@
       section {
         @each $key, $values in $breakpoints {
           @if $values {
-            @media (min-width: map.get($values, "breakpoint")) {
+            @media (min-height: map.get($values, "breakpoint")) {
               $multiplier: 1;
               @if $key == "sm" {
                 $multiplier: 1.25;
@@ -183,7 +183,7 @@
       article {
         @each $key, $values in $breakpoints {
           @if $values {
-            @media (min-width: map.get($values, "breakpoint")) {
+            @media (min-height: map.get($values, "breakpoint")) {
               $multiplier: 1;
               @if $key == "sm" {
                 $multiplier: 1.25;

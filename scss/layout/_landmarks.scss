@@ -13,7 +13,7 @@
 
   // 1. Remove the margin in all browsers (opinionated)
   body {
-    width: 100%;
+    inline-size: 100%;
     margin: 0; // 1
   }
 
@@ -31,21 +31,20 @@
       // <header>, <main>, <footer> as containers
       @if $enable-semantic-container {
         $first-breakpoint: true;
-        width: 100%;
-        margin-right: auto;
-        margin-left: auto;
-        padding: var(#{$css-var-prefix}block-spacing-vertical)
-          var(#{$css-var-prefix}block-spacing-horizontal);
+        inline-size: 100%;
+        margin-inline: auto;
+        padding-inline: var(#{$css-var-prefix}block-spacing-horizontal);
+        padding-block: var(#{$css-var-prefix}block-spacing-vertical);
 
         @if $enable-viewport {
           @each $key, $values in $breakpoints {
             @if $values {
-              @media (min-width: map.get($values, "breakpoint")) {
-                max-width: map.get($values, "viewport");
+              @media (min-inline-size: map.get($values, "breakpoint")) {
+                max-inline-size: map.get($values, "viewport");
                 @if $first-breakpoint {
                   $first-breakpoint: false;
-                  padding-right: 0;
-                  padding-left: 0;
+                  padding-inline-start: 0;
+                  padding-inline-end: 0;
                 }
               }
             }

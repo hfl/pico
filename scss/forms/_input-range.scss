@@ -8,8 +8,8 @@ $border-thumb: 2px;
 
 // Slider Track
 @mixin slider-track {
-  width: 100%;
-  height: $height-track;
+  inline-size: 100%;
+  block-size: $height-track;
   border-radius: var(#{$css-var-prefix}border-radius);
   background-color: var(#{$css-var-prefix}range-border-color);
 
@@ -23,9 +23,9 @@ $border-thumb: 2px;
 // Slider Thumb
 @mixin slider-thumb {
   -webkit-appearance: none;
-  width: $height-thumb;
-  height: $height-thumb;
-  margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
+  inline-size: $height-thumb;
+  block-size: $height-thumb;
+  margin-block-start: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
   border: $border-thumb solid var(#{$css-var-prefix}range-thumb-border-color);
   border-radius: 50%;
   background-color: var(#{$css-var-prefix}range-thumb-color);
@@ -48,8 +48,8 @@ $border-thumb: 2px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 100%;
-    height: $height-thumb;
+    inline-size: 100%;
+    block-size: $height-thumb;
     background: none;
 
     &::-webkit-slider-runnable-track {

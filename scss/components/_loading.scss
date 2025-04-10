@@ -12,8 +12,8 @@
 
     &::before {
       display: inline-block;
-      width: 1em;
-      height: 1em;
+      inline-size: 1em;
+      block-size: 1em;
       background-image: var(#{$css-var-prefix}icon-loading);
       background-size: 1em auto;
       background-repeat: no-repeat;

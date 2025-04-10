@@ -10,7 +10,7 @@
   // ––––––––––––––––––––
   #{$parent-selector} details.dropdown {
     position: relative;
-    border-bottom: none;
+    border-block-end: none;
 
     // Marker
     // ––––––––––––––––––––
@@ -19,15 +19,15 @@
     > a {
       &::after {
         display: block;
-        width: 1rem;
-        height: calc(1rem * var(#{$css-var-prefix}line-height, 1.5));
+        inline-size: 1rem;
+        block-size: calc(1rem * var(#{$css-var-prefix}line-height, 1.5));
         margin-inline-start: 0.25rem;
-        float: right;
+        float: inline-end;
         // TODO: find out why we need this magic number (0.2 rem)
         // for the marker to be aligned with the regular select
         transform: rotate(0deg) translateX(0.2rem);
         background-image: var(#{$css-var-prefix}icon-chevron);
-        background-position: right center;
+        background-position: bottom center;
         background-size: 1rem auto;
         background-repeat: no-repeat;
         content: "";
@@ -40,14 +40,14 @@
   // ––––––––––––––––––––
   #{$parent-selector} nav details.dropdown {
     // Override height
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 
   // Button as a select
   // inside container type accordion
   // ––––––––––––––––––––
   #{$parent-selector} details.dropdown > summary:not([role]) {
-    height: calc(
+    block-size: calc(
       1rem *
         var(#{$css-var-prefix}line-height) +
         var(#{$css-var-prefix}form-element-spacing-vertical) *
@@ -55,8 +55,8 @@
         var(#{$css-var-prefix}border-width) *
         2
     );
-    padding: var(#{$css-var-prefix}form-element-spacing-vertical)
-      var(#{$css-var-prefix}form-element-spacing-horizontal);
+    padding-inline: var(#{$css-var-prefix}form-element-spacing-horizontal);
+    padding-block: var(#{$css-var-prefix}form-element-spacing-vertical);
     border: var(#{$css-var-prefix}border-width)
       solid
       var(#{$css-var-prefix}form-element-border-color);
@@ -124,7 +124,8 @@
   // ––––––––––––––––––––
   #{$parent-selector} nav details.dropdown {
     display: inline;
-    margin: calc(var(#{$css-var-prefix}nav-element-spacing-vertical) * -1) 0;
+    margin-inline: 0;
+    margin-block: calc(var(#{$css-var-prefix}nav-element-spacing-vertical) * -1);
 
     > summary {
       &::after {
@@ -133,15 +134,15 @@
 
       &:not([role]) {
         // Override height
-        height: calc(
+        block-size: calc(
           (1rem * var(#{$css-var-prefix}line-height)) +
             (var(#{$css-var-prefix}nav-link-spacing-vertical) * 2)
         );
-        padding: calc(
-            var(#{$css-var-prefix}nav-link-spacing-vertical) -
-              (var(#{$css-var-prefix}border-width) * 2)
-          )
-          var(#{$css-var-prefix}nav-link-spacing-horizontal);
+        padding-inline: var(#{$css-var-prefix}nav-link-spacing-horizontal);
+        padding-block: calc(
+          var(#{$css-var-prefix}nav-link-spacing-vertical) -
+            (var(#{$css-var-prefix}border-width) * 2)
+        );
 
         &:focus-visible {
           box-shadow: 0
@@ -160,12 +161,12 @@
     display: flex;
     z-index: 99;
     position: absolute;
-    left: 0;
     flex-direction: column;
-    width: 100%;
-    min-width: fit-content;
+    inline-size: 100%;
+    min-inline-size: fit-content;
     margin: 0;
-    margin-top: var(#{$css-var-prefix}outline-width);
+    margin-block-start: var(#{$css-var-prefix}outline-width);
+    inset-inline-start: 0;
     padding: 0;
     border: var(#{$css-var-prefix}border-width) solid var(#{$css-var-prefix}dropdown-border-color);
     border-radius: var(#{$css-var-prefix}border-radius);
@@ -182,31 +183,31 @@
     }
 
     &[dir="rtl"] {
-      right: 0;
-      left: auto;
+      inset-inline-end: 0;
+      inset-inline-start: auto;
     }
 
     li {
-      width: 100%;
-      margin-bottom: 0;
-      padding: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5)
-        var(#{$css-var-prefix}form-element-spacing-horizontal);
+      inline-size: 100%;
+      margin-block-end: 0;
+      padding-inline: var(#{$css-var-prefix}form-element-spacing-horizontal);
+      padding-block: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
       list-style: none;
 
       &:first-of-type {
-        margin-top: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
+        margin-block-start: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
       }
 
       &:last-of-type {
-        margin-bottom: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
+        margin-block-end: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
       }
 
       a {
         display: block;
-        margin: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * -0.5)
-          calc(var(#{$css-var-prefix}form-element-spacing-horizontal) * -1);
-        padding: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5)
-          var(#{$css-var-prefix}form-element-spacing-horizontal);
+        margin-inline: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) * -1);
+        margin-block: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * -0.5);
+        padding-inline: var(#{$css-var-prefix}form-element-spacing-horizontal);
+        padding-block: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
         overflow: hidden;
         border-radius: 0;
         color: var(#{$css-var-prefix}dropdown-color);
@@ -223,7 +224,7 @@
       }
 
       label {
-        width: 100%;
+        inline-size: 100%;
       }
 
       // Not working in Firefox, which doesn't support the `:has()` pseudo-class
@@ -237,7 +238,7 @@
   // inside container type accordion
   // ––––––––––––––––––––
   #{$parent-selector} details.dropdown[open] > summary {
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 
   // Menu opened
@@ -264,8 +265,8 @@
       display: block;
       z-index: 1;
       position: fixed;
-      width: 100vw;
-      height: 100vh;
+      inline-size: 100vw;
+      block-size: 100vh;
       inset: 0;
       background: none;
       content: "";
@@ -275,6 +276,6 @@
   // Label
   // ––––––––––––––––––––
   #{$parent-selector} label > details.dropdown {
-    margin-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
+    margin-block-start: calc(var(#{$css-var-prefix}spacing) * 0.25);
   }
 }

@@ -30,30 +30,30 @@
     ol,
     ul {
       align-items: center;
-      margin-bottom: 0;
+      margin-block-end: 0;
       padding: 0;
       list-style: none;
 
       &:first-of-type {
-        margin-left: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
+        margin-inline-start: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
       }
       &:last-of-type {
-        margin-right: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
+        margin-inline-end: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
       }
     }
 
     li {
       display: inline-block;
       margin: 0;
-      padding: var(#{$css-var-prefix}nav-element-spacing-vertical)
-        var(#{$css-var-prefix}nav-element-spacing-horizontal);
+      padding-inline: var(#{$css-var-prefix}nav-element-spacing-horizontal);
+      padding-block: var(#{$css-var-prefix}nav-element-spacing-vertical);
 
       :where(a, [role="link"]) {
         display: inline-block;
-        margin: calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * -1)
-          calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * -1);
-        padding: var(#{$css-var-prefix}nav-link-spacing-vertical)
-          var(#{$css-var-prefix}nav-link-spacing-horizontal);
+        margin-inline: calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * -1);
+        margin-block: calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * -1);
+        padding-inline: var(#{$css-var-prefix}nav-link-spacing-horizontal);
+        padding-block: var(#{$css-var-prefix}nav-link-spacing-vertical);
         border-radius: var(#{$css-var-prefix}border-radius);
 
         &:not(:hover) {
@@ -67,15 +67,15 @@
       [type="button"],
       input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
       select {
-        height: auto;
-        margin-right: inherit;
-        margin-bottom: 0;
-        margin-left: inherit;
-        padding: calc(
-            var(#{$css-var-prefix}nav-link-spacing-vertical) -
-              (var(#{$css-var-prefix}border-width) * 2)
-          )
-          var(#{$css-var-prefix}nav-link-spacing-horizontal);
+        block-size: auto;
+        margin-inline-start: inherit;
+        margin-inline-end: inherit;
+        margin-block-end: 0;
+        padding-inline: var(#{$css-var-prefix}nav-link-spacing-horizontal);
+        padding-block: calc(
+          var(#{$css-var-prefix}nav-link-spacing-vertical) -
+            (var(#{$css-var-prefix}border-width) * 2)
+        );
       }
     }
 
@@ -90,16 +90,18 @@
         }
 
         a {
-          margin: calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * -1) 0;
+          margin-inline: 0;
           margin-inline-start: calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * -1);
+          margin-block: calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * -1);
         }
 
         &:not(:last-child) {
           &::after {
             display: inline-block;
             position: absolute;
-            width: calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * 4);
-            margin: 0 calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * -1);
+            inline-size: calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * 4);
+            margin-inline: calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * -1);
+            margin-block: 0;
             content: var(#{$css-var-prefix}nav-breadcrumb-divider);
             color: var(#{$css-var-prefix}muted-color);
             text-align: center;

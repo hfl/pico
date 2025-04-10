@@ -14,13 +14,13 @@
     grid-template-columns: 1fr;
 
     @if map.get($breakpoints, "md") {
-      @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
+      @media (min-height: map.get(map.get($breakpoints, "md"), "breakpoint")) {
         grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
       }
     }
 
     & > * {
-      min-width: 0; // HACK for children in overflow
+      min-height: 0; // HACK for children in overflow
     }
   }
 }

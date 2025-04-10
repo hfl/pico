@@ -8,7 +8,7 @@
 
   #{$parent-selector} details {
     display: block;
-    margin-bottom: var(#{$css-var-prefix}spacing);
+    margin-block-end: var(#{$css-var-prefix}spacing);
 
     summary {
       line-height: 1rem;
@@ -39,10 +39,10 @@
       // Marker
       &::after {
         display: block;
-        width: 1rem;
-        height: 1rem;
+        inline-size: 1rem;
+        block-size: 1rem;
         margin-inline-start: calc(var(#{$css-var-prefix}spacing, 1rem) * 0.5);
-        float: right;
+        float: inline-start;
         transform: rotate(-90deg);
         background-image: var(#{$css-var-prefix}icon-chevron);
         background-position: right center;
@@ -73,12 +73,12 @@
 
       // Type button
       &[role="button"] {
-        width: 100%;
-        text-align: left;
+        inline-size: 100%;
+        text-align: start;
 
         // Marker
         &::after {
-          height: calc(1rem * var(#{$css-var-prefix}line-height, 1.5));
+          block-size: calc(1rem * var(#{$css-var-prefix}line-height, 1.5));
         }
       }
     }
@@ -86,7 +86,7 @@
     // Open
     &[open] {
       > summary {
-        margin-bottom: var(#{$css-var-prefix}spacing);
+        margin-block-end: var(#{$css-var-prefix}spacing);
 
         &:not([role]) {
           &:not(:focus) {
@@ -104,10 +104,10 @@
   [dir="rtl"] {
     #{$parent-selector} details {
       summary {
-        text-align: right;
+        text-align: end;
 
         &::after {
-          float: left;
+          float: inline-start;
           background-position: left center;
         }
       }

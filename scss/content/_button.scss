@@ -42,8 +42,8 @@
     #{$css-var-prefix}border-color: var(#{$css-var-prefix}primary-border);
     #{$css-var-prefix}color: var(#{$css-var-prefix}primary-inverse);
     #{$css-var-prefix}box-shadow: var(#{$css-var-prefix}button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-    padding: var(#{$css-var-prefix}form-element-spacing-vertical)
-      var(#{$css-var-prefix}form-element-spacing-horizontal);
+    padding-inline: var(#{$css-var-prefix}form-element-spacing-horizontal);
+    padding-block: var(#{$css-var-prefix}form-element-spacing-vertical);
     border: var(#{$css-var-prefix}border-width) solid var(#{$css-var-prefix}border-color);
     border-radius: var(#{$css-var-prefix}border-radius);
     outline: none;
@@ -88,7 +88,7 @@
   #{$parent-selector} [type="submit"],
   #{$parent-selector} [type="reset"],
   #{$parent-selector} [type="button"] {
-    margin-bottom: var(#{$css-var-prefix}spacing);
+    margin-block-end: var(#{$css-var-prefix}spacing);
   }
 
   // .secondary, .contrast & .outline

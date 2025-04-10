@@ -25,7 +25,7 @@
   // Add the correct display in iOS 4-7
   #{$parent-selector} audio:not([controls]) {
     display: none;
-    height: 0;
+    block-size: 0;
   }
 
   // Remove the border on iframes in all browsers (opinionated)
@@ -36,8 +36,8 @@
   // 1. Remove the border on images inside links in IE 10.
   // 2. Responsive by default
   #{$parent-selector} img {
-    max-width: 100%; // 2
-    height: auto; // 2
+    max-inline-size: 100%; // 2
+    block-size: auto; // 2
     border-style: none; // 1
   }
 
