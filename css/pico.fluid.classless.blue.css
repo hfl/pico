@@ -44,31 +44,31 @@
   --pico-icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
   --pico-icon-loading: url("data:image/svg+xml,%3Csvg fill='none' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3E%3Cstyle%3E g %7B animation: rotate 2s linear infinite; transform-origin: center center; %7D circle %7B stroke-dasharray: 75,100; stroke-dashoffset: -5; animation: dash 1.5s ease-in-out infinite; stroke-linecap: round; %7D @keyframes rotate %7B 0%25 %7B transform: rotate(0deg); %7D 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1,100; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -17.5; %7D 100%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -62; %7D %7D %3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='rgb(136, 145, 164)' stroke-width='4' /%3E%3C/g%3E%3C/svg%3E");
 }
-@media (min-height: 710px) {
+@media (min-height: 576px) {
   :root,
   :host {
     --pico-font-size: 106.25%;
   }
 }
-@media (min-height: 1500px) {
+@media (min-height: 768px) {
   :root,
   :host {
     --pico-font-size: 112.5%;
   }
 }
-@media (min-height: 2150px) {
+@media (min-height: 1024px) {
   :root,
   :host {
     --pico-font-size: 118.75%;
   }
 }
-@media (min-height: 2500px) {
+@media (min-height: 1280px) {
   :root,
   :host {
     --pico-font-size: 125%;
   }
 }
-@media (min-height: 3040px) {
+@media (min-height: 1536px) {
   :root,
   :host {
     --pico-font-size: 131.25%;
@@ -2014,14 +2014,14 @@ dialog > article {
   margin: var(--pico-spacing);
   overflow: auto;
 }
-@media (min-inline-size: 710px) {
+@media (min-inline-size: 576px) {
   dialog > article {
-    max-inline-size: 650px;
+    max-inline-size: 510px;
   }
 }
-@media (min-inline-size: 1500px) {
+@media (min-inline-size: 768px) {
   dialog > article {
-    max-inline-size: 1320px;
+    max-inline-size: 700px;
   }
 }
 dialog > article > header > * {
