@@ -8,7 +8,7 @@
 
   :root,
   :host {
-    #{$css-var-prefix}scrollbar-width: 0px;
+    #{$css-var-prefix}scrollbar-inline-size: 0px;
   }
 
   #{$parent-selector} dialog {
@@ -44,14 +44,14 @@
       overflow: auto;
 
       @if map.get($breakpoints, "sm") {
-        @media (min-inline-size: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
-          max-inline-size: map.get(map.get($breakpoints, "sm"), "viewport");
+        @media (min-height: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
+          max-height: map.get(map.get($breakpoints, "sm"), "viewport");
         }
       }
 
       @if map.get($breakpoints, "md") {
-        @media (min-inline-size: map.get(map.get($breakpoints, "md"), "breakpoint")) {
-          max-inline-size: map.get(map.get($breakpoints, "md"), "viewport");
+        @media (min-height: map.get(map.get($breakpoints, "md"), "breakpoint")) {
+          max-height: map.get(map.get($breakpoints, "md"), "viewport");
         }
       }
 

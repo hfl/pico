@@ -2356,7 +2356,7 @@ main {
  */
 :root,
 :host {
-  --pico-scrollbar-width: 0px;
+  --pico-scrollbar-inline-size: 0px;
 }
 
 .pico dialog {
@@ -2386,14 +2386,14 @@ main {
   margin: var(--pico-spacing);
   overflow: auto;
 }
-@media (min-inline-size: 576px) {
+@media (min-height: 576px) {
   .pico dialog > article {
-    max-inline-size: 510px;
+    max-height: 510px;
   }
 }
-@media (min-inline-size: 768px) {
+@media (min-height: 768px) {
   .pico dialog > article {
-    max-inline-size: 700px;
+    max-height: 700px;
   }
 }
 .pico dialog > article > header > * {
