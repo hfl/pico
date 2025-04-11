@@ -1778,7 +1778,7 @@ main {
   block-size: 1rem;
   margin-inline-start: calc(var(--pico-spacing, 1rem) * 0.5);
   float: inline-end;
-  transform: rotate(-90deg);
+  transform: rotate(0);
   background-image: var(--pico-icon-chevron);
   background-position: right center;
   background-size: 1rem auto;
@@ -1811,7 +1811,7 @@ main {
   color: var(--pico-accordion-open-summary-color);
 }
 .pico details[open] > summary::after {
-  transform: rotate(0);
+  transform: rotate(-90deg);
 }
 
 [dir=rtl] .pico details summary {
