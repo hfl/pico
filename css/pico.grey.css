@@ -2632,7 +2632,7 @@ progress::-moz-progress-bar {
 }
 @media (prefers-reduced-motion: no-preference) {
   progress:indeterminate {
-    background: var(--pico-progress-background-color) linear-gradient(to right, var(--pico-progress-color) 30%, var(--pico-progress-background-color) 30%) top left/150% 150% no-repeat;
+    background: var(--pico-progress-background-color) linear-gradient(var(--pico-progress-color) 30%, var(--pico-progress-background-color) 30%) top left/150% 150% no-repeat;
     animation: progress-indeterminate 1s linear infinite;
   }
   progress:indeterminate[value]::-webkit-progress-value {
@@ -2651,10 +2651,10 @@ progress::-moz-progress-bar {
 
 @keyframes progress-indeterminate {
   0% {
-    background-position: 200% 0;
+    background-position: 0 200%;
   }
   100% {
-    background-position: -200% 0;
+    background-position: 0 -200%;
   }
 }
 /**

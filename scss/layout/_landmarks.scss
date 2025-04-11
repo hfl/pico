@@ -39,8 +39,8 @@
         @if $enable-viewport {
           @each $key, $values in $breakpoints {
             @if $values {
-              @media (min-inline-size: map.get($values, "breakpoint")) {
-                max-inline-size: map.get($values, "viewport");
+              @media (min-height: map.get($values, "breakpoint")) {
+                max-height: map.get($values, "viewport");
                 @if $first-breakpoint {
                   $first-breakpoint: false;
                   padding-inline-start: 0;

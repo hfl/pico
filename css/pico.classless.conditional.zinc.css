@@ -606,41 +606,41 @@ main {
   padding-inline: var(--pico-block-spacing-horizontal);
   padding-block: var(--pico-block-spacing-vertical);
 }
-@media (min-inline-size: 576px) {
+@media (min-height: 576px) {
   .pico body > header,
   .pico body > main,
   .pico body > footer {
-    max-inline-size: 510px;
+    max-height: 510px;
     padding-inline-start: 0;
     padding-inline-end: 0;
   }
 }
-@media (min-inline-size: 768px) {
+@media (min-height: 768px) {
   .pico body > header,
   .pico body > main,
   .pico body > footer {
-    max-inline-size: 700px;
+    max-height: 700px;
   }
 }
-@media (min-inline-size: 1024px) {
+@media (min-height: 1024px) {
   .pico body > header,
   .pico body > main,
   .pico body > footer {
-    max-inline-size: 950px;
+    max-height: 950px;
   }
 }
-@media (min-inline-size: 1280px) {
+@media (min-height: 1280px) {
   .pico body > header,
   .pico body > main,
   .pico body > footer {
-    max-inline-size: 1200px;
+    max-height: 1200px;
   }
 }
-@media (min-inline-size: 1536px) {
+@media (min-height: 1536px) {
   .pico body > header,
   .pico body > main,
   .pico body > footer {
-    max-inline-size: 1450px;
+    max-height: 1450px;
   }
 }
 
@@ -2252,7 +2252,7 @@ main {
 }
 @media (prefers-reduced-motion: no-preference) {
   .pico progress:indeterminate {
-    background: var(--pico-progress-background-color) linear-gradient(to right, var(--pico-progress-color) 30%, var(--pico-progress-background-color) 30%) top left/150% 150% no-repeat;
+    background: var(--pico-progress-background-color) linear-gradient(var(--pico-progress-color) 30%, var(--pico-progress-background-color) 30%) top left/150% 150% no-repeat;
     animation: progress-indeterminate 1s linear infinite;
   }
   .pico progress:indeterminate[value]::-webkit-progress-value {
@@ -2271,10 +2271,10 @@ main {
 
 @keyframes progress-indeterminate {
   0% {
-    background-position: 200% 0;
+    background-position: 0 200%;
   }
   100% {
-    background-position: -200% 0;
+    background-position: 0 -200%;
   }
 }
 /**

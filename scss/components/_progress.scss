@@ -64,7 +64,6 @@
       &:indeterminate {
         background: var(#{$css-var-prefix}progress-background-color)
           linear-gradient(
-            to right,
             var(#{$css-var-prefix}progress-color) 30%,
             var(#{$css-var-prefix}progress-background-color) 30%
           )
@@ -92,11 +91,11 @@
 
   @keyframes progress-indeterminate {
     0% {
-      background-position: 200% 0;
+      background-position: 0 200%;
     }
 
     100% {
-      background-position: -200% 0;
+      background-position: 0 -200%;
     }
   }
 }
