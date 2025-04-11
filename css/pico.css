@@ -2094,7 +2094,7 @@ nav details.dropdown {
   margin-block: calc(var(--pico-nav-element-spacing-vertical) * -1);
 }
 nav details.dropdown > summary::after {
-  transform: rotate(0deg) translateX(0rem);
+  transform: rotate(-90deg) translateX(0rem);
 }
 nav details.dropdown > summary:not([role]) {
   block-size: calc(1rem * var(--pico-line-height) + var(--pico-nav-link-spacing-vertical) * 2);
