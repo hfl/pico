@@ -1740,7 +1740,7 @@ details summary::after {
   inline-size: 1rem;
   block-size: 1rem;
   margin-inline-start: calc(var(--pico-spacing, 1rem) * 0.5);
-  float: inline-start;
+  float: inline-end;
   transform: rotate(-90deg);
   background-image: var(--pico-icon-chevron);
   background-position: right center;

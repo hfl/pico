@@ -42,7 +42,7 @@
         inline-size: 1rem;
         block-size: 1rem;
         margin-inline-start: calc(var(#{$css-var-prefix}spacing, 1rem) * 0.5);
-        float: inline-start;
+        float: inline-end;
         transform: rotate(-90deg);
         background-image: var(#{$css-var-prefix}icon-chevron);
         background-position: right center;
